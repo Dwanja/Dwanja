@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronRight, BarChart, FileText, Search, Zap, Target, TrendingUp, Users } from "lucide-react"
+import { InteractiveDashboard } from "@/components/interactive-dashboard"
 
 export default function LandingPage() {
   const [activeTab, setActiveTab] = useState("features")
@@ -73,28 +73,19 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Screenshot Section */}
+        {/* Interactive Dashboard Demo */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-8">
               <div className="text-center space-y-2">
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">See It In Action</h2>
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Try It Live</h2>
                 <p className="text-gray-500 max-w-[600px]">
-                  Our intuitive dashboard makes it easy to create compelling sales stories that convert
+                  Experience our intuitive story builder in action. Create, preview, and optimize your LinkedIn stories
+                  in real-time.
                 </p>
               </div>
-              <div className="relative w-full max-w-4xl">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl -z-10"></div>
-                <div className="relative rounded-lg overflow-hidden shadow-2xl border">
-                  <Image
-                    src="/images/dashboard-screenshot.png"
-                    alt="LinkedIn Sales Story Builder Dashboard"
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
+              <div className="w-full">
+                <InteractiveDashboard />
               </div>
             </div>
           </div>
